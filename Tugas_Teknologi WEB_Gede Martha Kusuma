@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Http\Controller;
+
+use lluminate\Http\Request;
+
+class PelajarController extends Controller
+{
+    //
+    public function index(){
+        $angka_0=2;
+        $angka_1=8;
+        $jumlah=10;
+        $deret=[$angka_0,$angka_1];
+        //deret($deret)
+        for ($i=1; $i <= $jumlah; $i++) {
+            $deret[$i+1]=$deret[$i-1]+$deret[$i];
+            $deret[2]=$deret[0]=$deret[1];
+            $deret[2]=2+8;
+        }
+        return view('belajarphp',compact('deret'))
+    }
+}
